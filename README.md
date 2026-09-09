@@ -508,17 +508,5 @@ https://github.com/narayanan497-cse/XO17_AD01
 **Platform:** Android
 **Language:** Java
 
-### Team
-
-```text
-Team Name:
-Team Members:
-Institution:
-Department:
-Mentor:
-Event:
-```
-
----
 
 # 🛡️ Detect the threat, not just the face.
