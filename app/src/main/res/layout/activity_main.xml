@@ -1,0 +1,125 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/shield_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PRIVACYSHIELD"
+            android:textColor="@color/shield_accent"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.16" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Your screen.\nOnly for your eyes."
+            android:textColor="@color/shield_text"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Real-time shoulder surfing protection powered by on-device face analysis."
+            android:textColor="@color/shield_muted"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/bg_panel"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="●  PROTECTION OFF"
+                android:textColor="@color/shield_danger"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/statusDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Start protection, then open the demo vault."
+                android:textColor="@color/shield_muted"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_primary_button"
+            android:text="START PROTECTION"
+            android:textAllCaps="false"
+            android:textColor="@color/shield_text"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/openDemoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_outline_button"
+            android:text="OPEN PROTECTED DEMO"
+            android:textAllCaps="false"
+            android:textColor="@color/shield_text" />
+
+        <Button
+            android:id="@+id/accessibilityButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_outline_button"
+            android:text="ENABLE GLOBAL SHIELD"
+            android:textAllCaps="false"
+            android:textColor="@color/shield_text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="WHY IT STANDS OUT"
+            android:textColor="@color/shield_text"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.12" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_panel"
+            android:lineSpacingExtra="4dp"
+            android:text="• Primary-user tracking separates you from nearby faces\n• Head orientation + eye state estimates screen attention\n• Three-frame confirmation reduces false alarms\n• No camera images are saved or uploaded\n• Screen becomes unreadable immediately on threat"
+            android:textColor="@color/shield_muted"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/accessibilityStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Global Shield: accessibility permission not enabled"
+            android:textColor="@color/shield_muted"
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>

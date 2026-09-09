@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/shield_bg">
+
+    <!-- ===================================================== -->
+    <!-- SENSITIVE CONTENT                                     -->
+    <!-- This entire layer can be blurred when the shield is  -->
+    <!-- active. The LIVE DETECTION panel is intentionally NOT -->
+    <!-- inside this container.                                -->
+    <!-- ===================================================== -->
+
+    <LinearLayout
+        android:id="@+id/sensitiveContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEMO VAULT"
+            android:textColor="@color/shield_accent"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.16" />
+
+        <TextView
+            android:id="@+id/protectionStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="●  ARMED — SINGLE VIEWER"
+            android:textColor="@color/shield_safe"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:text="Secure Wallet"
+            android:textColor="@color/shield_text"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Available balance"
+            android:textColor="@color/shield_muted"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="₹ 48,760.00"
+            android:textColor="@color/shield_text"
+            android:textSize="38sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_panel"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RECENT ACTIVITY"
+                android:textColor="@color/shield_muted"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="UPI transfer  •  ₹2,400&#10;Merchant payment  •  ₹680&#10;Salary credit  •  ₹32,000"
+                android:textColor="@color/shield_text"
+                android:textSize="15sp"
+                android:lineSpacingExtra="9dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/threatMetric"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Privacy risk: 0 / 100  •  Faces detected: 0"
+            android:textColor="@color/shield_muted"
+            android:textSize="13sp" />
+
+        <!-- Empty space keeps the existing BACK button at bottom. -->
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_outline_button"
+            android:text="BACK"
+            android:textAllCaps="false"
+            android:textColor="@color/shield_text" />
+
+    </LinearLayout>
+
+
+    <!-- ===================================================== -->
+    <!-- FULL SCREEN SHIELD                                    -->
+    <!-- This hides/blurs the sensitive content.               -->
+    <!-- The LIVE DETECTION panel is declared AFTER this       -->
+    <!-- overlay, so it remains visible and sharp.              -->
+    <!-- ===================================================== -->
+
+    <FrameLayout
+        android:id="@+id/shieldOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_shield_overlay"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔒"
+                android:textSize="44sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="SCREEN PROTECTED"
+                android:textColor="@color/shield_text"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/threatMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="Potential shoulder surfer detected.&#10;Move them out of view to restore access."
+                android:textColor="@color/shield_muted"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <!-- ===================================================== -->
+    <!-- LIVE DETECTION MONITOR                               -->
+    <!-- IMPORTANT: this is OUTSIDE sensitiveContent and is    -->
+    <!-- AFTER shieldOverlay, so it is never blurred or hidden. -->
+    <!-- ===================================================== -->
+
+    <LinearLayout
+        android:id="@+id/liveMonitor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="76dp"
+        android:background="@drawable/bg_panel"
+        android:elevation="20dp"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LIVE DETECTION"
+            android:textColor="@color/shield_accent"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/liveStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="● SAFE"
+            android:textColor="@color/shield_safe"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/liveDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="Faces             0&#10;Privacy risk      0 / 100&#10;Attention         LOW&#10;Proximity         FAR&#10;Head direction    AWAY&#10;Voting            0 / 10&#10;Persistence       0.0 sec"
+            android:textColor="@color/shield_muted"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:lineSpacingExtra="2dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

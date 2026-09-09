@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PrivacyShield</string>
+    <string name="accessibility_description">Detects nearby attentive faces using the front camera and places a privacy shield over sensitive content when a potential shoulder surfer is detected.</string>
+</resources>

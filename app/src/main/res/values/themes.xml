@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.PrivacyShield" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/shield_bg</item>
+        <item name="android:navigationBarColor">@color/shield_bg</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+</resources>
